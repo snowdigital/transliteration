@@ -4,14 +4,14 @@
   "description": "Transliteration to different languages",
   "main": "./dist/require/index.js",
   "module": "./dist/import/index.js",
-  "type": "module",
   "scripts": {
     "build": "npm run clean && npm run build:js",
     "build:browser": "webpack --output-path ./dist/browser/ --output-filename index.js --mode production --entry ./dist/import/index.js --output-library-type var --output-library-name Transliteration --devtool source-map",
     "build:import": "tsc --outDir ./dist/import --module ESNext",
     "build:js": "npm run build:import && npm run build:require && npm run build:browser",
     "build:require": "tsc --outDir ./dist/require --module commonjs",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll --coverage",
+    "test:ci": "jest --ci --coverage --verbose",
     "clean": "rimraf ./dist"
   },
   "keywords": [
@@ -31,11 +31,16 @@
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
+    "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^8.1.0",
     "@typescript-eslint/parser": "^8.1.0",
     "esbuild": "^0.23.1",
     "eslint": "^9.9.0",
+    "jest": "^29.7.0",
+    "jest-filename-transform": "^0.1.0",
+    "jest-hud-reporter": "^0.0.1",
     "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.4",
     "typescript": "^5.5.4",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
