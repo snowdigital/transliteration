@@ -1,6 +1,6 @@
 {
   "name": "@snowdigital/transliteration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transliteration to different languages",
   "main": "./dist/require/index.js",
   "module": "./dist/import/index.js",
