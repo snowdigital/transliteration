@@ -1,0 +1,43 @@
+{
+  "name": "transliteration",
+  "version": "1.0.0",
+  "description": "Transliteration to different languages",
+  "main": "./dist/require/index.js",
+  "module": "./dist/import/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run clean && npm run build:js",
+    "build:browser": "webpack --output-path ./dist/browser/ --output-filename index.js --mode production --entry ./dist/import/index.js --output-library-type var --output-library-name Transliteration --devtool source-map",
+    "build:import": "tsc --outDir ./dist/import --module ESNext",
+    "build:js": "npm run build:import && npm run build:require && npm run build:browser",
+    "build:require": "tsc --outDir ./dist/require --module commonjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./dist"
+  },
+  "keywords": [
+    "transliteration"
+  ],
+  "author": "snowluminum",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snowdigital/transliteration.git"
+  },
+  "bugs": {
+    "url": "https://github.com/snowdigital/transliteration/issues"
+  },
+  "homepage": "https://github.com/snowdigital/transliteration#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "@typescript-eslint/parser": "^8.1.0",
+    "esbuild": "^0.23.1",
+    "eslint": "^9.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

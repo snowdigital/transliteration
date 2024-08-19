@@ -1,0 +1,13 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "esnext",
+    "baseUrl": "src",
+    "lib": ["esnext", "dom"],
+    "target": "es6",
+    "noEmit": false,
+    "declaration": true,
+    "declarationDir": "typings"
+  }
+}
