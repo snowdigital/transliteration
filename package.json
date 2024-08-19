@@ -1,5 +1,5 @@
 {
-  "name": "transliteration",
+  "name": "@snowdigital/transliteration",
   "version": "1.0.0",
   "description": "Transliteration to different languages",
   "main": "./dist/require/index.js",
@@ -19,6 +19,11 @@
   },
   "keywords": [
     "transliteration"
+  ],
+  "files": [
+    "dist/**/*",
+    "typings/**/*",
+    "src/**/*"
   ],
   "author": "snowluminum",
   "license": "ISC",
