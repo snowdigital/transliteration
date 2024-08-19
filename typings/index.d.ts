@@ -1,1 +1,1 @@
-export declare const transliterate: (text: any) => void;
+export declare const transliterateRU: (text: string) => string;
